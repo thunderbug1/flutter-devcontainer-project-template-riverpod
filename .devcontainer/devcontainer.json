@@ -1,0 +1,37 @@
+{
+    "name": "flutter_docker",
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    "remoteUser": "developer",
+    "customizations": {
+        "settings": {
+            "terminal.integrated.shell.linux": null
+        },
+		"vscode": {
+			"extensions": [
+				"Dart-Code.flutter",
+				"Dart-Code.dart-code",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+    },
+    "mounts": [
+        "source=/dev/bus/usb,target=/dev/bus/usb,type=bind"
+    ],
+    "runArgs": [
+        "--privileged",
+        "--network=host",
+        "--device",
+        "/dev/kvm",
+        "--device",
+        "/dev/dri:/dev/dri",
+        "-v",
+        "/tmp/.X11-unix:/tmp/.X11-unix",
+        "-e",
+        "DISPLAY=${localEnv:DISPLAY}",
+        "-v",
+        "/home/${localEnv:USER}/.Xauthority:/root/.Xauthority:rw"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/developer/workspace,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/developer/workspace"
+}
