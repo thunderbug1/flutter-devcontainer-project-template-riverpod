@@ -2,8 +2,7 @@
 
 Updated version of this demo project: [Flutter Firebase Authentication Riverpod](https://github.com/2002Bishwajeet/authentication_riverpod/tree/master)
 This Project demonstrates how to run a full flutter dev envrionment in a devcontainer in VS-Code
-This repo contains a sample Flutter application that demonstrates the use of Firebase authentication to a Flutter app using Riverpod as a State management solution
-[Refer to my Medium Blog for detailed explanation](https://bishwajeet-techmaster.medium.com/firebase-authentication-using-flutter-and-riverpod-f302ab749383)
+This repo contains a sample Flutter application that demonstrates the use of Firebase authentication to a Flutter app using Riverpod as a State management solution.
 
 ## TechStack Used
 
