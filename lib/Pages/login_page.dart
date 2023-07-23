@@ -168,6 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                             enableSuggestions: true,
                             keyboardType: TextInputType.emailAddress,
                             onSaved: (value) {},
+                            autofillHints: const [AutofillHints.username],
                             decoration: InputDecoration(
                               hintText: 'Email address',
                               hintStyle: const TextStyle(color: Colors.black54),
@@ -195,12 +196,15 @@ class _LoginPageState extends State<LoginPage> {
                           child: TextFormField(
                             controller: _password,
                             obscureText: true,
+                            onEditingComplete: _onPressedFunction,
                             validator: (value) {
-                              if (value!.isEmpty || value.length < 8) {
+                              if (type == Status.signUp &&
+                                  (value!.isEmpty || value.length < 6)) {
                                 return 'Password is too short!';
                               }
                               return null;
                             },
+                            autofillHints: const [AutofillHints.password],
                             decoration: InputDecoration(
                               hintText: 'Password',
                               hintStyle: const TextStyle(color: Colors.black54),
