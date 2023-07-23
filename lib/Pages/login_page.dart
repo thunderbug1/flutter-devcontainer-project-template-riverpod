@@ -49,26 +49,32 @@ class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   bool _isLoading2 = false;
   void loading() {
-    setState(() {
-      _isLoading = !_isLoading;
-    });
+    if (mounted) {
+      setState(() {
+        _isLoading = !_isLoading;
+      });
+    }
   }
 
   void loading2() {
-    setState(() {
-      _isLoading2 = !_isLoading2;
-    });
+    if (mounted) {
+      setState(() {
+        _isLoading2 = !_isLoading2;
+      });
+    }
   }
 
   void _switchType() {
-    if (type == Status.signUp) {
-      setState(() {
-        type = Status.login;
-      });
-    } else {
-      setState(() {
-        type = Status.signUp;
-      });
+    if (mounted) {
+      if (type == Status.signUp) {
+        setState(() {
+          type = Status.login;
+        });
+      } else {
+        setState(() {
+          type = Status.signUp;
+        });
+      }
     }
     // print(type);
   }
@@ -321,10 +327,10 @@ class _LoginPageState extends State<LoginPage> {
                                       side: BorderSide(
                                           color: Colors.blue.shade700),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                      children: const [
+                                      children: [
                                         //  A google icon here
                                         //  an External Package used here
                                         //  Font_awesome_flutter package used
