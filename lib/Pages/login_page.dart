@@ -242,6 +242,22 @@ class _LoginPageState extends State<LoginPage> {
                                   : null,
                             ),
                           ),
+                        const Spacer(),
+                        Center(
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => ForgotPasswordPage(),
+                                  ),
+                                );
+                              },
+                              child: Text("forgot Password?",
+                                  style: TextStyle(
+                                    color: Colors.blue.shade700,
+                                    // decoration: TextDecoration.underline
+                                  ))),
+                        ),
                         const Spacer()
                       ],
                     ),
